@@ -8,3 +8,8 @@ export interface ILocation extends ICoordinates {
   country: string;
   state?: string;
 }
+
+export interface ILocationOption {
+  value: ILocation;
+  label: string;
+}

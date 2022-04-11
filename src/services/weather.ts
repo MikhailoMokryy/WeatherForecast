@@ -23,10 +23,10 @@ export const weatherApi = createApi({
         },
       }),
     }),
-    getLocation: builder.query<ILocation, string>({
+    getLocation: builder.query<ILocation[], string>({
       query: (args: string) => ({
         url: 'geo/1.0/direct',
-        params: { q: args, appid: process.env?.REACT_APP_API_KEY },
+        params: { q: args, limit: 4, appid: process.env?.REACT_APP_API_KEY },
       }),
     }),
   }),
