@@ -1,5 +1,19 @@
-export interface IAppProps {}
+import DailyWeather from './DailyWeather';
+import { IDailyWeather } from '../../models/Weather';
 
-export default function DailyWeatherList(props: IAppProps) {
-  return <div></div>;
+interface IProps {
+  daily: IDailyWeather[];
+}
+
+export default function DailyWeatherList({ daily }: IProps) {
+  const weatherList = daily.map((elem: IDailyWeather, index: number) => (
+    <DailyWeather key={index} {...elem} />
+  ));
+
+  return (
+    <div>
+      <h5>Daily Weather:</h5>
+      {weatherList}
+    </div>
+  );
 }

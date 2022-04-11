@@ -1,20 +1,22 @@
-import { useGetWeatherQuery } from '../../services/weather';
+import { useContext } from 'react';
+import { ScaleType } from '../../models/enums/ScaleType';
+import { ICurrentWeather } from '../../models/Weather';
+import { formatToTime } from '../../utils/date';
+import { formatToTemperature } from '../../utils/temperature';
+import { ScaleContext } from '../FullWeather/FullWeather';
 
-export interface IAppProps {}
+export default function CurrentWeather({ dt, temp, weather }: ICurrentWeather) {
+  const scaleType: ScaleType = useContext(ScaleContext);
 
-export default function CurrentWeather(props: IAppProps) {
-  const { data, error, isLoading } = useGetWeatherQuery({
-    lat: 42.9834,
-    lon: -81.233,
-  });
+  return (
+    <div>
+      <h5>Current Weather:</h5>
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error!</div>;
-  }
-
-  return <div>{data?.current.dt}</div>;
+      <div>DateTime: {formatToTime({ dateTime: dt })}</div>
+      <div>Temperature: {formatToTemperature({ temp, type: scaleType })}</div>
+      <i className={`wi wi-owm-${weather[0].id}`} />
+      <div>{weather[0].description}</div>
+      <div>Scale type: {scaleType}</div>
+    </div>
+  );
 }

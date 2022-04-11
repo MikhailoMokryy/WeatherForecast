@@ -1,4 +1,5 @@
 export interface Icons {
+  id: number;
   main: string;
-  icon: string;
+  description: string;
 }

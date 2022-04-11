@@ -18,6 +18,7 @@ export const weatherApi = createApi({
         params: {
           ...args,
           exclude: 'minutely,hourly,alert',
+          units: 'metric',
           appid: process.env?.REACT_APP_API_KEY,
         },
       }),
