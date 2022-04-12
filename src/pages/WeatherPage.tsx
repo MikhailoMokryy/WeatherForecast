@@ -5,8 +5,8 @@ export interface IAppProps {}
 
 export default function WeatherPage(props: IAppProps) {
   return (
-    <div>
-      <h3>WeatherPage</h3>
+    <div className={styles.weather}>
+      <h3 className={styles.weatherheader}>Weather Forecast</h3>
       <FullWeather />
     </div>
   );

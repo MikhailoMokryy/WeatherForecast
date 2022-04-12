@@ -1,0 +1,62 @@
+.current {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #e9ecef;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  border-color: #2fa4e7;
+
+  h5 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #2fa4e7;
+    margin: 0.5rem 0.25rem;
+  }
+
+  &data {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+  }
+
+  &col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &iconsm {
+    margin: 0.25rem;
+
+    &::before {
+      margin-right: 0.25rem;
+    }
+  }
+
+  &icon {
+    margin: 1rem 0.25rem;
+    transform: scale(2);
+  }
+
+  &time {
+    margin-bottom: 0.25rem;
+  }
+
+  &temp {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0.25rem 0;
+  }
+
+  &label {
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 0.25rem;
+  }
+}

@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ICoordinates, ILocation } from '../models/Location';
 import { IFullWeather } from '../models/Weather';
+import { saveState } from '../store/localStorage';
 
 //https://api.openweathermap.org/data/2.5/onecall?lat=42.9834&lon=-81.233&exclude=minutely,hourly,alerts&appid=00f96bb1225d69a3b731471600db2c96
 
@@ -22,6 +23,12 @@ export const weatherApi = createApi({
           appid: process.env?.REACT_APP_API_KEY,
         },
       }),
+      async onQueryStarted(id, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          saveState(data, 'weather');
+        } catch (err) {}
+      },
     }),
     getLocation: builder.query<ILocation[], string>({
       query: (args: string) => ({

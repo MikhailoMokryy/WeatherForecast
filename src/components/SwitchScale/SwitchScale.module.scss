@@ -1,0 +1,21 @@
+.switch {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+
+  &btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    background-color: #2fa4e7;
+    border-color: #2fa4e7;
+
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+      background-color: #288bc4;
+      border-color: #2683b9;
+    }
+  }
+}

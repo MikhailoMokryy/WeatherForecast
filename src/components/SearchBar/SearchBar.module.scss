@@ -1,0 +1,44 @@
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+
+  &btn {
+    flex: 0 0 auto;
+    width: 20%;
+    padding: 0 0.25rem;
+    color: #2fa4e7;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid #2fa4e7;
+    padding: 0.4rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.65;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: #2fa4e7;
+      border-color: #2fa4e7;
+      cursor: pointer;
+    }
+  }
+
+  &select {
+    flex: 0 0 auto;
+    width: 80%;
+    padding: 0 0.25rem;
+  }
+}
