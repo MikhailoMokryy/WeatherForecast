@@ -1,0 +1,45 @@
+@import '../../../variables';
+
+.daily {
+  flex: 1 1 0;
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: $blue;
+  color: $white;
+  background-color: $blue;
+
+  .data {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+  }
+
+  .icon {
+    margin: 1rem 0.25rem;
+    transform: scale(2);
+  }
+
+  .time {
+    margin-bottom: 0.25rem;
+  }
+
+  .temp {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0.25rem 0;
+  }
+
+  .label {
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 0.25rem;
+  }
+}

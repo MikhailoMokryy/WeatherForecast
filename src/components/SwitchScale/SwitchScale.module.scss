@@ -1,21 +1,31 @@
+@import '../../variables';
+
 .switch {
   position: absolute;
   right: 2rem;
   top: 2rem;
 
-  &btn {
+  @media screen and (max-width: 740px) {
+    right: 2rem;
+    top: 0.75rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    right: 1rem;
+  }
+
+  .btn {
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
     border-radius: 0.5rem;
-    color: #fff;
-    background-color: #2fa4e7;
-    border-color: #2fa4e7;
+    color: $white;
+    background-color: $blue;
+    border-color: $blue;
 
     &:hover {
       cursor: pointer;
-      color: #fff;
-      background-color: #288bc4;
-      border-color: #2683b9;
+      background-color: $blue-sec;
+      border-color: $blue-hover;
     }
   }
 }

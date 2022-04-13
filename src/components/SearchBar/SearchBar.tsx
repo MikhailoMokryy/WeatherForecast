@@ -55,14 +55,15 @@ export default function SearchBar({
         onChange={onCityChange}
         onInputChange={setSelectInput}
         options={selectOptions}
-        className={styles.searchselect}
+        className={styles.select}
       />
+
       <button
-        className={styles.searchbtn}
+        className={styles.btn}
         onClick={getLocation}
         disabled={!isGeolocationActive}
       >
-        Current Location
+        <i className={`wi wi-wind-direction ${styles.icon}`} />
       </button>
     </div>
   );

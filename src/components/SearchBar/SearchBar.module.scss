@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .search {
   display: flex;
   flex-wrap: wrap;
@@ -5,19 +7,25 @@
   margin-right: 0.25rem;
   margin-left: 0.25rem;
 
-  &btn {
+  @media screen and (max-width: 740px) {
+    margin-top: 1rem;
+  }
+
+  .icon {
+    transform: scale(2);
+  }
+
+  .btn {
     flex: 0 0 auto;
-    width: 20%;
-    padding: 0 0.25rem;
-    color: #2fa4e7;
+    color: $blue;
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
     background-color: transparent;
-    border: 1px solid #2fa4e7;
-    padding: 0.4rem 0.75rem;
+    border: 1px solid $blue-sec;
+    padding: 0.4rem 1rem;
     font-size: 1rem;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
@@ -29,16 +37,15 @@
     }
 
     &:hover {
-      color: #fff;
-      background-color: #2fa4e7;
-      border-color: #2fa4e7;
+      color: $white;
+      background-color: $blue;
+      border-color: $blue;
       cursor: pointer;
     }
   }
 
-  &select {
-    flex: 0 0 auto;
-    width: 80%;
-    padding: 0 0.25rem;
+  .select {
+    flex: 1 0 auto;
+    padding-right: 0.25rem;
   }
 }

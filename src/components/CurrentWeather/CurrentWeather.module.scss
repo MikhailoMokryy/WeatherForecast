@@ -1,36 +1,52 @@
+@import '../../variables';
+
 .current {
+  width: 20%;
+  margin: 0.25rem;
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
-  min-width: 0;
   word-wrap: break-word;
-  background-color: #e9ecef;
+  background-color: $blue;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #2fa4e7;
+  border-color: $blue;
+  color: $white;
+
+  @media screen and (max-width: 960px) {
+    width: auto;
+  }
 
   h5 {
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.2;
-    color: #2fa4e7;
+    color: $white;
     margin: 0.5rem 0.25rem;
   }
 
-  &data {
+  .data {
     display: flex;
     flex-direction: row;
     align-self: center;
+
+    @media screen and (max-width: 960px) {
+      flex-direction: column;
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @media screen and (max-width: 960px) {
+        flex-direction: row;
+      }
+    }
   }
 
-  &col {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  &iconsm {
+  .iconsm {
     margin: 0.25rem;
 
     &::before {
@@ -38,22 +54,22 @@
     }
   }
 
-  &icon {
+  .icon {
     margin: 1rem 0.25rem;
     transform: scale(2);
   }
 
-  &time {
+  .time {
     margin-bottom: 0.25rem;
   }
 
-  &temp {
+  .temp {
     font-weight: 500;
     font-size: 1.1rem;
     margin: 0.25rem 0;
   }
 
-  &label {
+  .label {
     font-size: 0.9rem;
     font-weight: 300;
     font-style: italic;

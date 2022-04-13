@@ -16,7 +16,7 @@ export default function SwitchScale({ onScaleChange }: IProps) {
         onClick={() =>
           onScaleChange(scaleType === ScaleType.C ? ScaleType.F : ScaleType.C)
         }
-        className={styles.switchbtn}
+        className={styles.btn}
       >
         {scaleType}
       </button>

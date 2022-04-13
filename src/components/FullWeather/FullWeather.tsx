@@ -38,7 +38,7 @@ export default function FullWeather() {
   }, [data, setWeatherData]);
 
   useEffect(() => {
-    if (selectedCity) saveState(selectedCity, 'location');
+    saveState(selectedCity, 'location');
   }, [selectedCity]);
 
   if (error) {
@@ -59,10 +59,10 @@ export default function FullWeather() {
         onLocationChange={setGeoCoords}
       />
       {weatherData ? (
-        <>
+        <div className={styles.weather}>
           <CurrentWeather {...weatherData.current} />
           <DailyWeatherList daily={weatherData.daily} />
-        </>
+        </div>
       ) : (
         <div className={styles.info}>Please search city or use location.</div>
       )}

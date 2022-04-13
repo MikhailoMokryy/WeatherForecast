@@ -1,6 +1,6 @@
 const formatToDay = ({ dateTime }: { dateTime: number }): string => {
   const timestamp: number = dateTime * 1000;
-  return new Date(timestamp).toLocaleDateString();
+  return new Date(timestamp).toLocaleDateString().substring(0, 5);
 };
 
 const formatToTime = ({ dateTime }: { dateTime: number }): string => {

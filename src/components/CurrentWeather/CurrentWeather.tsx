@@ -11,37 +11,31 @@ export default function CurrentWeather(props: ICurrentWeather) {
 
   return (
     <div className={styles.current}>
-      <h5>Current Weather:</h5>
-      <div className={styles.currenttime}>
-        {formatToTime({ dateTime: props.dt })}
-      </div>
-      <div className={styles.currenttemp}>
+      <h5>Current Weather</h5>
+      <div className={styles.time}>{formatToTime({ dateTime: props.dt })}</div>
+      <div className={styles.temp}>
         {formatToTemperature({ temp: props.temp, type: scaleType })}
       </div>
-      <i className={`wi wi-owm-${props.weather[0].id} ${styles.currenticon}`} />
-      <div className={styles.currentlabel}>{props.weather[0].description}</div>
+      <i className={`wi wi-owm-${props.weather[0].id} ${styles.icon}`} />
+      <div className={styles.label}>{props.weather[0].description}</div>
 
-      <div className={styles.currentdata}>
-        <div className={styles.currentcol}>
-          <i className={`wi wi-barometer ${styles.currenticonsm}`}>
+      <div className={styles.data}>
+        <div className={styles.col}>
+          <i className={`wi wi-barometer ${styles.iconsm}`}>
             {props.pressure} hPa
           </i>
-          <i className={`wi wi-humidity ${styles.currenticonsm}`}>
-            {props.humidity}%
-          </i>
-          <i className={`wi wi-sunrise ${styles.currenticonsm}`}>
+          <i className={`wi wi-humidity ${styles.iconsm}`}>{props.humidity}%</i>
+          <i className={`wi wi-sunrise ${styles.iconsm}`}>
             {formatToTime({ dateTime: props.sunrise })}{' '}
           </i>
         </div>
 
-        <div className={styles.currentcol}>
-          <i className={`wi wi-cloud ${styles.currenticonsm}`}>
-            {props.clouds}%
-          </i>
-          <i className={`wi wi-strong-wind ${styles.currenticonsm}`}>
+        <div className={styles.col}>
+          <i className={`wi wi-cloud ${styles.iconsm}`}>{props.clouds}%</i>
+          <i className={`wi wi-strong-wind ${styles.iconsm}`}>
             {props.wind_speed} m/s
           </i>
-          <i className={`wi wi-sunset ${styles.currenticonsm}`}>
+          <i className={`wi wi-sunset ${styles.iconsm}`}>
             {formatToTime({ dateTime: props.sunset })}
           </i>
         </div>
