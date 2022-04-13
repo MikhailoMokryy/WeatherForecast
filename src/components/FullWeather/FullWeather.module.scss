@@ -7,10 +7,10 @@
   @media screen and (max-width: 960px) {
     flex-direction: column;
   }
+}
 
-  .info {
-    margin-top: 4rem;
-    font-size: 1.25rem;
-    color: $blue;
-  }
+.info {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: $blue;
 }

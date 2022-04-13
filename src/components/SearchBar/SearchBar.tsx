@@ -36,15 +36,20 @@ export default function SearchBar({
   const getLocation = () => {
     setIsGeolocationActive(false);
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        setSelectInput('');
-        onCityChange(null);
-        onLocationChange({
-          lat: position.coords.latitude,
-          lon: position.coords.longitude,
-        });
-        setIsGeolocationActive(true);
-      });
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setSelectInput('');
+          onCityChange(null);
+          onLocationChange({
+            lat: position.coords.latitude,
+            lon: position.coords.longitude,
+          });
+          setIsGeolocationActive(true);
+        },
+        () => {
+          setIsGeolocationActive(true);
+        }
+      );
     }
   };
 
